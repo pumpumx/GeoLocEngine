@@ -1,7 +1,11 @@
+
 import { Router } from "express"
 
+class ExternalRoutes {
+    public path ='api/v1/platform'
+    public router = Router()
 
-const geoLocationRouter = Router();
+    
+}
 
-
-geoLocationRouter.route('/service-status').post()
+export default ExternalRoutes

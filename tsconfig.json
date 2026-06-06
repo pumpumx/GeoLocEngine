@@ -1,44 +1,14 @@
-{ 
-  "compileOnSave": false,
+{
   "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "strict": true,
-    "target": "es2017",
-    "lib": ["es2017", "esnext.asynciterable"],
-    "typeRoots": ["node_modules/@types"],
-    "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
-    "module": "commonjs",
-    "pretty": true,
-    "sourceMap": false,
-    "declaration": false,
-    "rootDir": "src",
-    "outDir": "dist",
-    "allowJs": true,
-    "noEmit": false,
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "importHelpers": true,
-    "baseUrl": "src",
-    "paths": {
-      "@/*": ["*"],
-      "@config": ["config"],
-      "@controllers/*": ["controllers/*"],
-      "@databases": ["databases"],
-      "@dtos/*": ["dtos/*"],
-      "@exceptions/*": ["exceptions/*"],
-      "@typings/*": ["typings/*"],
-      "@middlewares/*": ["middlewares/*"],
-      "@models/*": ["models/*"],
-      "@routes/*": ["routes/*"],
-      "@services/*": ["services/*"],
-      "@utils/*": ["utils/*"]
-    },
-    "skipLibCheck": true
+    "skipLibCheck": true,
+     "typeRoots": ["./node_modules/@types", "./src/types"]
   },
-  "include": ["src/**/*.ts", "src/**/*.json", ".env"],
-  "exclude": ["node_modules", "src/tests"]
+  "include": ["src"]
 }
-
