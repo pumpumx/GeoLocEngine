@@ -71,12 +71,7 @@ const UserLocationSchema = new Schema<UserLocationType>(
 
     source: {
       type: String,
-      enum: [
-        "gps",
-        "network",
-        "manual",
-        "unknown",
-      ],
+      enum: ["gps", "network", "manual", "unknown"],
       default: "unknown",
     },
 
@@ -126,9 +121,6 @@ UserLocationSchema.index({
   updatedAt: -1,
 });
 
-const UserLocationModel = mongoose.model(
-  "UserLocation",
-  UserLocationSchema,
-);
+const UserLocationModel = mongoose.model("UserLocation", UserLocationSchema);
 
-export default UserLocationModel
+export default UserLocationModel;
