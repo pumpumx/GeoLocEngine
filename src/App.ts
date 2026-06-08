@@ -3,6 +3,7 @@ import cookieParser from 'cookie-parser';
 import express from "express";
 import { NODE_ENV, PORT } from "./config/index.js";
 import { Routes } from "./typings/routes.js";
+import { connectWithMongo } from './databases/index.js';
 
 
 
@@ -18,7 +19,10 @@ class App {
     this.app = express();
     this.routes = routes
 
+
     this.initialiseMiddlewares()
+    this.initialiseRoutes()
+
   }
 
   public listen() {
@@ -28,16 +32,30 @@ class App {
       console.info(`🚀 App listening on the port ${this.port}`);
       console.info(`=================================`);
     });
+    this.initialiseMongo()
   }
 
   public getServer(){
     return this.app
   }
 
+  private initialiseRoutes(){
+    this.routes.forEach((route)=>{
+      this.app.use('/',route.router)
+      console.log(route)
+    })
+  }
+
+  private async initialiseMongo(){
+    await connectWithMongo()
+  }
+
   private initialiseMiddlewares(){
 
     this.app.use(cors())
     this.app.use(cookieParser())
+    this.app.use(express.json())
+    this.app.use(express.urlencoded({limit:'64kb'}))
 
   }
 }

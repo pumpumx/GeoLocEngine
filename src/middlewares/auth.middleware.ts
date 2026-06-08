@@ -21,25 +21,16 @@ class AuthMiddleware {
       const authHeader = req.headers.authorization;
 
       if (!authHeader) {
-        throw new AppError(
-          "Authorization header missing",
-          401,
-        );
+        throw new AppError("Authorization header missing", 401);
       }
 
       const [scheme, token] = authHeader.split(" ");
 
       if (scheme !== "Bearer" || !token) {
-        throw new AppError(
-          "Invalid authorization format",
-          401,
-        );
+        throw new AppError("Invalid authorization format", 401);
       }
 
-      const decoded = jwt.verify(
-        token,
-        process.env.JWT_SECRET!,
-      ) as JwtPayload;
+      const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
 
       req.user = {
         _id: decoded._id,
@@ -49,12 +40,7 @@ class AuthMiddleware {
 
       next();
     } catch (error) {
-      next(
-        new AppError(
-          "Invalid or expired token",
-          401,
-        ),
-      );
+      next(new AppError("Invalid or expired token", 401));
     }
   };
 }

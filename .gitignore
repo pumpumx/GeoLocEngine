@@ -3,7 +3,6 @@ node_modules/
 dist/ 
 
 .env
-config.development.json
 
 # Logs
 logs/

@@ -2,6 +2,7 @@
 
 import { Request, Response } from "express";
 import userLocationService from "../../services/userLocation.service";
+import { IUpdateUserLocationReqBody } from "../typings/userLocation.typing";
 
 class UserLocationController {
   /**
@@ -11,7 +12,8 @@ class UserLocationController {
     req: Request,
     res: Response,
   ): Promise<void> => {
-    const location = await userLocationService.getUserLocation(req.user._id);
+    const userId = req.body.userId || req.user._id
+    const location = await userLocationService.getUserLocation(userId);
 
     res.status(200).json({
       success: true,
@@ -23,11 +25,14 @@ class UserLocationController {
    * POST /location
    */
   public updateLocation = async (
-    req: Request,
+    req: Request<{},{},IUpdateUserLocationReqBody,{}>,
     res: Response,
   ): Promise<void> => {
+
+    console.log("Have a check",req.body)
+    const userId = req.body?.userId || ""
     const location = await userLocationService.updateLocation(
-      req.user._id,
+      userId,
       req.body,
     );
 
@@ -47,8 +52,10 @@ class UserLocationController {
   ): Promise<void> => {
     const ringSize = req.query.ringSize ? Number(req.query.ringSize) : 1;
 
+    const userId = req.body.userId || req.user._id
+
     const users = await userLocationService.getNearbyUsers(
-      req.user!._id,
+       userId,
       ringSize,
     );
 
@@ -82,7 +89,9 @@ class UserLocationController {
     req: Request,
     res: Response,
   ): Promise<void> => {
-    await userLocationService.deleteLocation(req.user!._id);
+
+    const userId = req.body.userId || req.user._id
+    await userLocationService.deleteLocation(userId);
 
     res.status(200).json({
       success: true,

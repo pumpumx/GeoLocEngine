@@ -1,6 +1,5 @@
 
 
-
 export type getUserLocation = {
     UUID:string,
     lat:string,
@@ -9,7 +8,15 @@ export type getUserLocation = {
     lastLoc:string,
 }
 
-export type updateUserCurLoc = {
-    lat:string,
-    long:string,
+export type UpdateUserCurLoc = {
+    lat:number,
+    long:number,
+}
+
+//Getting an array of location to increase accuracy
+export type IUpdateUserLocationReqBody = {
+      coords:UpdateUserCurLoc,
+      accuracy?: number;
+      device_meta?: Record<string, unknown>;
+      userId?:string
 }

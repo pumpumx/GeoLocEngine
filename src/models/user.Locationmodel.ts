@@ -43,7 +43,6 @@ const UserLocationSchema = new Schema<UserLocationType>(
     h3_index: {
       type: String,
       required: true,
-      index: true,
     },
 
     /**

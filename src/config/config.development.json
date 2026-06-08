@@ -1,0 +1,11 @@
+{
+    "mongodb":{
+        "host":"localhost",
+        "port":"27017",
+        "database":"BirdView",
+        "mongo_uri":"mongodb://localhost:27017/BirdView?authSource=admin"
+    },
+    "server":{
+        "port":"3012"
+    }
+}
