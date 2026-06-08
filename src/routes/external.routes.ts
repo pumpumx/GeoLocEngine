@@ -43,6 +43,12 @@ class ExternalRoutes {
             `${prefix}/get-cell-users`,
             asyncHandler(this.UserLocationController.getUsersByCell)
         )
+
+        //Delete -> Will keep this off for the time being
+        this.router.delete(
+            `${prefix}/delete-location`,
+            asyncHandler(this.UserLocationController.deleteLocation)
+        )
     }
 }
 
