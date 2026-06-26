@@ -1,0 +1,61 @@
+{
+  "template_id": "monthly_arc",
+
+  "data": {
+
+    "arc": {
+      "month_label": "string — e.g. 'June 2026'",
+      "total_plays": "integer",
+      "total_listen_hours": "float",
+      "unique_artists": "integer",
+      "unique_songs": "integer"
+    },
+
+    "weekly_snapshots": [
+      {
+        "week": "string — e.g. 'Week 1'",
+        "period": "string",
+        "persona_id": "string",
+        "persona_label": "string",
+        "dominant_emotion": "string",
+        "map_x": "float",
+        "map_y": "float",
+        "defining_song": "string | null — song name only"
+      }
+    ],
+
+    "arc_analysis": {
+      "arc_type": "enum: stable_identity | gradual_shift | volatile | transformation | two_persona_split",
+      "start_persona": "string",
+      "end_persona": "string",
+      "changed": "boolean",
+      "change_copy": "string | null — e.g. 'You started the month locked in. Something shifted in week 2.'"
+    },
+
+    "map_journey": {
+      "start_x": "float",
+      "start_y": "float",
+      "end_x": "float",
+      "end_y": "float",
+      "waypoints": [{"x": "float", "y": "float", "week": "string"}],
+      "quadrants_visited": ["array of quadrant_ids"],
+      "net_movement": "float"
+    },
+
+    "top_songs": [
+      {
+        "song_id": "string",
+        "name": "string",
+        "artist_name": "string",
+        "play_count": "integer",
+        "week_peaked": "string"
+      }
+    ],
+
+    "copy": {
+      "headline": "string — the arc in one sentence",
+      "body": "string — 3-4 lines narrating the month",
+      "closing": "string — reflective close"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "template_id": "cold_start",
+
+  "data": {
+
+    "signal_status": {
+      "plays_so_far": "integer",
+      "plays_needed": "integer — minimum threshold",
+      "percentage_complete": "float 0-1",
+      "estimated_ready_at": "ISO 8601 datetime | null"
+    },
+
+    "copy": {
+      "headline": "string — e.g. 'Still reading you.'",
+      "body": "string — warm, not clinical. e.g. 'Keep listening. The more you play, the more we understand. Your first drop arrives once we have enough to say something true.'",
+      "progress_label": "string — e.g. '12 songs in. Getting there.'"
+    },
+
+    "visual": {
+      "show_progress_bar": "boolean",
+      "style": "enum: minimal | with_animation"
+    }
+  }
+}

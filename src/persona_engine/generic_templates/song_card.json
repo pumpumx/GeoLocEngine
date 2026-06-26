@@ -1,0 +1,46 @@
+{
+  "template_id": "song_card",
+
+  "data": {
+
+    "song": {
+      "song_id": "string — spotify track URI",
+      "name": "string",
+      "artist_name": "string",
+      "album_name": "string",
+      "release_year": "integer",
+      "duration_seconds": "integer",
+      "album_art_url": "string | null — Spotify CDN URL",
+      "spotify_url": "string — deep link for tap-to-play"
+    },
+
+    "listening_stats": {
+      "play_count": "integer — how many times this period",
+      "total_listen_time_seconds": "integer",
+      "completion_rate": "float 0-1 — avg % of track completed",
+      "first_played_at": "ISO 8601 datetime",
+      "last_played_at": "ISO 8601 datetime",
+      "peak_play_hour": "integer 0-23 — most common hour this was played",
+      "is_repeat_listener": "boolean — played more than 3x"
+    },
+
+    "song_profile_summary": {
+      "dominant_emotion": "string — from enriched song profile",
+      "primary_context": "string — e.g. 'late_night'",
+      "energy_score": "float 0-100",
+      "sentiment_primary": "string — e.g. 'melancholic'",
+      "tags": ["array of strings from song profile tags"]
+    },
+
+    "selection_reason": {
+      "reason_type": "enum: highest_repeat | emotional_match | persona_trigger | late_night_anchor | first_play_of_period",
+      "reason_copy": "string — human sentence explaining why this song was chosen e.g. 'Played 7 times. Always after midnight.'"
+    },
+
+    "copy": {
+      "headline": "string | null — optional card headline",
+      "body": "string — 1-2 lines about what this song meant in context of the week",
+      "emotional_tag": "string — short phrase e.g. 'Your 1am companion'"
+    }
+  }
+}

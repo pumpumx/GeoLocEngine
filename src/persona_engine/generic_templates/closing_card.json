@@ -1,0 +1,23 @@
+{
+  "template_id": "closing_card",
+
+  "data": {
+
+    "copy": {
+      "body": "string — the main closing message e.g. 'That's your week. The music kept playing. You kept feeling things.'",
+      "return_line": "string — when to expect next drop e.g. 'See you Monday.'",
+      "tone": "enum: quiet | warm | wistful | minimal"
+    },
+
+    "next_drop": {
+      "drop_type": "string — what the next drop will be",
+      "scheduled_at": "ISO 8601 datetime",
+      "teaser": "string | null — optional single line hinting at next drop e.g. 'Monthly arc drops in 8 days.'"
+    },
+
+    "visual": {
+      "style": "enum: text_only | with_subtle_icon | with_period_label",
+      "period_label": "string | null — e.g. 'Week 25, 2026'"
+    }
+  }
+}

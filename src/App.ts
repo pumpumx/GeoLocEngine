@@ -42,7 +42,6 @@ class App {
   private initialiseRoutes(){
     this.routes.forEach((route)=>{
       this.app.use('/',route.router)
-      console.log(route)
     })
   }
 

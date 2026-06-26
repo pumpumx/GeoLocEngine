@@ -1,0 +1,41 @@
+{
+  "template_id": "drift_card",
+
+  "data": {
+
+    "drift_type": "enum: stuck | recovering | transforming | oscillating",
+
+    "history": [
+      {
+        "period": "string — e.g. 'Week 23'",
+        "persona_id": "string",
+        "persona_label": "string",
+        "score": "float",
+        "map_x": "float",
+        "map_y": "float"
+      }
+    ],
+
+    "current": {
+      "persona_id": "string",
+      "persona_label": "string",
+      "consecutive_periods": "integer",
+      "total_periods_tracked": "integer"
+    },
+
+    "map_trajectory": {
+      "start_x": "float",
+      "start_y": "float",
+      "end_x": "float",
+      "end_y": "float",
+      "net_movement": "float — total euclidean distance",
+      "direction_label": "string | null — e.g. 'moving toward solitude'"
+    },
+
+    "copy": {
+      "headline": "string — e.g. 'You've been here before. Three weeks in a row.'",
+      "body": "string — 2 lines acknowledging the pattern without diagnosing it",
+      "tone": "enum: gentle | matter_of_fact | funny | concerned"
+    }
+  }
+}

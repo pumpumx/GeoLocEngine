@@ -1,0 +1,451 @@
+{
+  "drop_id": "drop_abc123",
+  "user_id": "u_xyz",
+  "drop_type": "weekly",
+  "period": "2026-W25",
+  "period_label": "June 16 – June 22",
+  "locale": "en-IN",
+  "status": "ready",
+  "generated_at": "2026-06-22T23:00:00.000Z",
+  "persona": {
+    "rule_id": "arpit_bala_core_v1",
+    "persona_id": "arpit_bala_core",
+    "score": 0.87,
+    "score_display": "87%",
+    "internal_archetype": "masked_melancholy"
+  },
+  "map_position": {
+    "x": -0.40,
+    "y": -0.55,
+    "quadrant_id": "solitude_heavy",
+    "movement_from_last": { "x": -0.05, "y": -0.10 }
+  },
+  "notification": {
+    "title": "Your weekly character has been assigned.",
+    "body": "Statistically speaking, the clown needs a hug.",
+    "deep_link": "app://drops/drop_abc123"
+  },
+  "cards": [
+    {
+      "card_id": "card_001",
+      "drop_id": "drop_abc123",
+      "user_id": "u_xyz",
+      "position": 1,
+      "template_id": "persona_splash",
+      "card_type": "persona_reveal",
+      "drop_type": "weekly",
+      "period": "2026-W25",
+      "locale": "en-IN",
+      "persona_id": "arpit_bala_core",
+      "rule_version": "arpit_bala_core_v1",
+      "status": "ready",
+      "generated_at": "2026-06-22T23:00:00.000Z",
+      "seen_at": null,
+      "data": {
+        "persona": {
+          "persona_id": "arpit_bala_core",
+          "rule_id": "arpit_bala_core_v1",
+          "internal_archetype": "masked_melancholy",
+          "score": 0.87,
+          "score_display": "87%",
+          "confidence": 0.91
+        },
+        "copy": {
+          "eyebrow": "This week you're",
+          "persona_label": "Arpit Bala Core",
+          "aka": null,
+          "subtitle": "Makes everyone laugh. Posts memes. Sends reels.",
+          "body": "Meanwhile the playlist tells a different story. Nostalgia up. Loneliness up. Late night listening up.",
+          "card_copy": "Profession: Clown. Internal Status: It's complicated.",
+          "tone": "funny"
+        },
+        "visual": {
+          "color_token": "coral",
+          "background_style": "solid",
+          "icon_glyph": "🤡",
+          "illustration_key": null
+        },
+        "symptoms": {
+          "enabled": true,
+          "label": "Symptoms include",
+          "items": [
+            "Sending reels at 1am to say 'lol' but meaning something else",
+            "Listening to Arijit Singh after posting a meme",
+            "Main character in the group chat, background character in your own story"
+          ]
+        },
+        "secondary_persona": {
+          "enabled": false,
+          "persona_id": null,
+          "persona_label": null,
+          "score_display": null,
+          "relationship_copy": null
+        },
+        "streak": {
+          "enabled": false,
+          "weeks": 1,
+          "streak_copy": null
+        },
+        "metadata": {
+          "based_on_plays": 143,
+          "period_label": "June 16 – June 22"
+        }
+      },
+      "share": {
+        "enabled": true,
+        "share_text": "This week I was: Arpit Bala Core (87%). Profession: Clown. Internal Status: It's complicated.",
+        "share_image_url": null,
+        "hashtags": ["ArpitBalaCore", "MusicPersonality", "SpotifyWrapped"]
+      },
+      "animation": {
+        "entrance": "scale_in",
+        "duration_ms": 400,
+        "delay_ms": 0,
+        "exit": "slide_left"
+      },
+      "debug": {
+        "signals_used": [
+          "weekly.signals.emotional.loneliness.weighted_avg",
+          "weekly.signals.behavioral.late_night_ratio",
+          "weekly.signals.context.late_night.weighted_avg",
+          "weekly.signals.emotional.nostalgia.weighted_avg",
+          "weekly.signals.lyrical.introspective.weighted_avg",
+          "weekly.signals.behavioral.humor_consumption_proxy"
+        ],
+        "rule_scores": {
+          "humor_consumption_proxy": 0.21,
+          "loneliness_signal": 0.19,
+          "late_night_ratio": 0.18,
+          "nostalgia_index": 0.16,
+          "introspective_lyrical": 0.13
+        },
+        "confidence": 0.91
+      }
+    },
+    {
+      "card_id": "card_002",
+      "position": 2,
+      "template_id": "map_position",
+      "card_type": "map",
+      "data": {
+        "coordinates": {
+          "x": -0.40,
+          "y": -0.55,
+          "x_axis_label": "Solitude ← → Social",
+          "y_axis_label": "Heavy ← → Dreaming",
+          "quadrant_id": "solitude_heavy",
+          "quadrant_label": "The Heavy Corner",
+          "quadrant_description": "Where you go when the noise stops and the feelings start."
+        },
+        "movement": {
+          "has_previous": true,
+          "prev_x": -0.35,
+          "prev_y": -0.45,
+          "delta_x": -0.05,
+          "delta_y": -0.10,
+          "movement_label": "drifting further into solitude",
+          "movement_magnitude": 0.11,
+          "movement_direction": "deeper"
+        },
+        "population": {
+          "enabled":false,
+          "total_users_on_map": 4821,
+          "same_quadrant_count": 1109,
+          "percentile": 23,
+          "density_grid": null
+        },
+        "copy": {
+          "headline": "You're in the corner again.",
+          "position_copy": "You landed in The Heavy Corner this week — solitude-leaning, sitting low on the map.",
+          "movement_copy": "Moved slightly further left and down from last week.",
+          "population_copy": "23% of listeners are somewhere near here with you."
+        },
+        "visual": {
+          "dot_color_token": "coral",
+          "show_trajectory_line": true,
+          "show_population_layer": true,
+          "map_style": "zoned"
+        }
+      },
+      "share": {
+        "enabled": true,
+        "share_text": "Week 25 on the music personality map: The Heavy Corner. 23% of listeners are here.",
+        "share_image_url": null,
+        "hashtags": ["MusicMap", "MusicPersonality"]
+      },
+      "animation": {
+        "entrance": "fade",
+        "duration_ms": 350,
+        "delay_ms": 100,
+        "exit": "slide_left"
+      },
+      "debug": {
+        "signals_used": ["weekly.map_coordinates"],
+        "rule_scores": {},
+        "confidence": 0.91
+      }
+    },
+    {
+      "card_id": "card_003",
+      "position": 3,
+      "template_id": "stat_highlight",
+      "card_type": "behavioral_insight",
+      "data": {
+        "stat": {
+          "value": "71%",
+          "raw_value": 0.71,
+          "unit": "%",
+          "stat_type": "percentage"
+        },
+        "copy": {
+          "label": "of your listening happened after 11pm",
+          "subtext": "The group chat thinks you're asleep.",
+          "comparison": "vs. 48% last week",
+          "tone": "funny"
+        },
+        "signal_source": {
+          "signal_field": "weekly.signals.behavioral.late_night_ratio",
+          "window": "weekly",
+          "play_count_basis": 143
+        },
+        "visual": {
+          "accent_color_token": "coral",
+          "size": "large",
+          "icon": "moon"
+        }
+      },
+      "share": {
+        "enabled": true,
+        "share_text": "71% of my listening happened after 11pm this week. The group chat thinks I'm asleep.",
+        "share_image_url": null,
+        "hashtags": ["NightOwl", "MusicPersonality"]
+      },
+      "animation": {
+        "entrance": "slide_up",
+        "duration_ms": 300,
+        "delay_ms": 80,
+        "exit": "slide_left"
+      },
+      "debug": {
+        "signals_used": ["weekly.signals.behavioral.late_night_ratio"],
+        "rule_scores": { "late_night_ratio": 0.71 },
+        "confidence": 0.88
+      }
+    },
+    {
+      "card_id": "card_004",
+      "position": 4,
+      "template_id": "emotion_breakdown",
+      "card_type": "emotional_pattern",
+      "data": {
+        "emotions": {
+          "dominant": {
+            "emotion_id": "nostalgia",
+            "label": "Nostalgia",
+            "score": 72,
+            "score_display": "72%"
+          },
+          "secondary": {
+            "emotion_id": "loneliness",
+            "label": "Loneliness",
+            "score": 58,
+            "score_display": "58%"
+          },
+          "tertiary": {
+            "emotion_id": "romance",
+            "label": "Romance",
+            "score": 44,
+            "score_display": "44%"
+          },
+          "suppressed": {
+            "emotion_id": "sadness",
+            "label": "Sadness",
+            "copy": "Low on the surface. The songs disagree."
+          }
+        },
+        "emotional_arc": {
+          "arc_type": "masked",
+          "arc_copy": "Started the week in hype. Ended in Arijit."
+        },
+        "copy": {
+          "headline": "The playlist knew before you did.",
+          "body": "Nostalgia was the dominant frequency this week — songs that know how to make you feel something you haven't named yet. Loneliness wasn't far behind.",
+          "closing": null
+        },
+        "visual": {
+          "chart_type": "bar_proportional",
+          "color_map": {
+            "nostalgia": "coral",
+            "loneliness": "purple",
+            "romance": "pink",
+            "sadness": "gray"
+          }
+        }
+      },
+      "share": { "enabled": false },
+      "animation": {
+        "entrance": "fade",
+        "duration_ms": 300,
+        "delay_ms": 80,
+        "exit": "slide_left"
+      },
+      "debug": {
+        "signals_used": [
+          "weekly.signals.emotional.nostalgia.weighted_avg",
+          "weekly.signals.emotional.loneliness.weighted_avg",
+          "weekly.signals.emotional.romance.weighted_avg",
+          "weekly.signals.emotional.sadness.weighted_avg"
+        ],
+        "rule_scores": {},
+        "confidence": 0.85
+      }
+    },
+    {
+      "card_id": "card_005",
+      "position": 5,
+      "template_id": "song_card",
+      "card_type": "defining_song",
+      "data": {
+        "song": {
+          "song_id": "spotify:track:4cOdK2wGLETKBW3PvgPWqT",
+          "name": "Tum Hi Ho",
+          "artist_name": "Arijit Singh",
+          "album_name": "Aashiqui 2",
+          "release_year": 2013,
+          "duration_seconds": 261,
+          "album_art_url": "https://i.scdn.co/image/...",
+          "spotify_url": "https://open.spotify.com/track/4cOdK2wGLETKBW3PvgPWqT"
+        },
+        "listening_stats": {
+          "play_count": 9,
+          "total_listen_time_seconds": 2349,
+          "completion_rate": 0.97,
+          "first_played_at": "2026-06-17T01:14:00Z",
+          "last_played_at": "2026-06-21T02:33:00Z",
+          "peak_play_hour": 1,
+          "is_repeat_listener": true
+        },
+        "song_profile_summary": {
+          "dominant_emotion": "longing",
+          "primary_context": "late_night",
+          "energy_score": 28,
+          "sentiment_primary": "melancholic",
+          "tags": ["romantic", "bollywood", "melancholic", "longing"]
+        },
+        "selection_reason": {
+          "reason_type": "late_night_anchor",
+          "reason_copy": "Played 9 times. Always after 1am. Always to completion."
+        },
+        "copy": {
+          "headline": null,
+          "body": "You didn't just listen to this. You stayed for it. Every single time.",
+          "emotional_tag": "Your 1am confession"
+        }
+      },
+      "share": {
+        "enabled": true,
+        "share_text": "My defining song this week: Tum Hi Ho by Arijit Singh. Played 9 times. Always after 1am.",
+        "share_image_url": null,
+        "hashtags": ["MusicMemory"]
+      },
+      "animation": {
+        "entrance": "slide_up",
+        "duration_ms": 350,
+        "delay_ms": 80,
+        "exit": "slide_left"
+      },
+      "debug": {
+        "signals_used": ["weekly.signals.behavioral.repeat_rate", "weekly.signals.behavioral.late_night_ratio"],
+        "rule_scores": { "repeat_at_late_night": 0.97 },
+        "confidence": 0.93
+      }
+    },
+    {
+      "card_id": "card_006",
+      "position": 6,
+      "template_id": "roast_card",
+      "card_type": "roast",
+      "data": {
+        "roast": {
+          "copy": "You listened to sad songs, sent a meme at 2am, replied 'haha' to everything, and somehow convinced everyone you were fine. Oscar-worthy.",
+          "subtext": "Your Spotify knows. We know. You know.",
+          "tone": "empathetic_roast",
+          "intensity": "medium"
+        },
+        "trigger": {
+          "signal_type": "masked_melancholy_pattern",
+          "signal_value": "humor consumption: high, sadness: suppressed, late night: 71%",
+          "threshold_that_triggered": "humor_proxy > 0.6 AND sadness < 0.3 AND late_night > 0.6"
+        },
+        "share": {
+          "share_copy": "My music app called me out: 'You listened to sad songs, sent a meme, replied haha to everything, and convinced everyone you were fine. Oscar-worthy.'",
+          "share_hashtags": ["ArpitBalaCore", "Called Out"]
+        },
+        "visual": {
+          "background_style": "dark",
+          "color_token": "coral",
+          "icon": "ti-masks-theater"
+        }
+      },
+      "share": {
+        "enabled": true,
+        "share_text": "My music app called me out: 'You listened to sad songs, sent a meme, replied haha to everything. Oscar-worthy.'",
+        "share_image_url": null,
+        "hashtags": ["ArpitBalaCore", "CalledOut"]
+      },
+      "animation": {
+        "entrance": "scale_in",
+        "duration_ms": 380,
+        "delay_ms": 0,
+        "exit": "slide_left"
+      },
+      "debug": {
+        "signals_used": [
+          "weekly.signals.behavioral.humor_consumption_proxy",
+          "weekly.signals.emotional.sadness.weighted_avg",
+          "weekly.signals.behavioral.late_night_ratio"
+        ],
+        "rule_scores": {
+          "humor_high": 0.78,
+          "sadness_suppressed": 0.22,
+          "late_night_high": 0.71
+        },
+        "confidence": 0.87
+      }
+    },
+    {
+      "card_id": "card_007",
+      "position": 7,
+      "template_id": "closing_card",
+      "card_type": "closing",
+      "data": {
+        "copy": {
+          "body": "That's your week. The music kept playing. You kept sending memes. Somewhere in between, you kept feeling things.",
+          "return_line": "See you Monday.",
+          "tone": "warm"
+        },
+        "next_drop": {
+          "drop_type": "daily",
+          "scheduled_at": "2026-06-23T08:00:00Z",
+          "teaser": null
+        },
+        "visual": {
+          "style": "with_period_label",
+          "period_label": "Week 25, 2026"
+        }
+      },
+      "share": { "enabled": false },
+      "animation": {
+        "entrance": "fade",
+        "duration_ms": 500,
+        "delay_ms": 200,
+        "exit": "fade_out"
+      },
+      "debug": {
+        "signals_used": [],
+        "rule_scores": {},
+        "confidence": 1.0
+      }
+    }
+  ]
+}

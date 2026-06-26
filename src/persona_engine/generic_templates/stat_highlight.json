@@ -1,0 +1,32 @@
+{
+  "template_id": "stat_highlight",
+
+  "data": {
+
+    "stat": {
+      "value": "string — the display value e.g. '68%' | '3 hours' | '22 times'",
+      "raw_value": "number — for frontend logic if needed",
+      "unit": "string | null — e.g. '%' | 'hours' | 'times' | 'days'",
+      "stat_type": "enum: percentage | count | duration | ratio | streak"
+    },
+
+    "copy": {
+      "label": "string — what the stat measures e.g. 'of your listening happened after 11pm'",
+      "subtext": "string — emotional punch or context e.g. 'The algorithm knows.'",
+      "comparison": "string | null — optional bench e.g. 'vs. 31% last week'",
+      "tone": "enum: funny | unsettling | warm | neutral | roast"
+    },
+
+    "signal_source": {
+      "signal_field": "string — which field generated this e.g. 'behavioral.late_night_ratio'",
+      "window": "enum: daily | weekly | monthly",
+      "play_count_basis": "integer — how many plays this is computed from"
+    },
+
+    "visual": {
+      "accent_color_token": "string",
+      "size": "enum: large | medium — large for primary card, medium for secondary",
+      "icon": "string | null — optional contextual icon name"
+    }
+  }
+}

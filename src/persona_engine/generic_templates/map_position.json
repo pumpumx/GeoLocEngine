@@ -1,0 +1,48 @@
+{
+  "template_id": "map_position",
+
+  "data": {
+
+    "coordinates": {
+      "x": "float -1.0 to 1.0 — current position on X axis",
+      "y": "float -1.0 to 1.0 — current position on Y axis",
+      "x_axis_label": "string — name of X axis e.g. 'Solitude ← → Social'",
+      "y_axis_label": "string — name of Y axis e.g. 'Heavy ← → Dreaming'",
+      "quadrant_id": "string — e.g. 'solitude_heavy'",
+      "quadrant_label": "string — named zone e.g. 'The Heavy Corner'",
+      "quadrant_description": "string — 1 line flavour text for this zone"
+    },
+
+    "movement": {
+      "has_previous": "boolean — false on first drop",
+      "prev_x": "float | null",
+      "prev_y": "float | null",
+      "delta_x": "float | null — positive = moved right",
+      "delta_y": "float | null — positive = moved up",
+      "movement_label": "string | null — e.g. 'drifting further left since last week'",
+      "movement_magnitude": "float | null — euclidean distance moved",
+      "movement_direction": "enum: deeper | recovering | stable | shifting | null"
+    },
+
+    "population": {
+      "total_users_on_map": "integer — anonymised total for density layer",
+      "same_quadrant_count": "integer — users in same quadrant this period",
+      "percentile": "integer — what % of users are 'above' (higher y) — for copy generation",
+      "density_grid": "array of {x, y, weight} — for rendering heatmap, can be null for v1"
+    },
+
+    "copy": {
+      "headline": "string — e.g. 'You're in the corner again.'",
+      "position_copy": "string — describes where they are in plain language",
+      "movement_copy": "string | null — describes the drift if applicable",
+      "population_copy": "string | null — e.g. '23% of listeners are here with you'"
+    },
+
+    "visual": {
+      "dot_color_token": "string — from persona colour assignment",
+      "show_trajectory_line": "boolean — draw line from prev to current",
+      "show_population_layer": "boolean",
+      "map_style": "enum: minimal | grid | zoned"
+    }
+  }
+}

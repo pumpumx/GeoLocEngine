@@ -1,0 +1,61 @@
+{
+  "template_id": "persona_splash",
+
+  "data": {
+
+    "persona": {
+      "persona_id": "string — e.g. arpit_bala_core",
+      "rule_id": "string — e.g. arpit_bala_core_v2",
+      "internal_archetype": "string — e.g. masked_melancholy (layer 2, never shown to user)",
+      "score": "float 0-1 — raw engine score",
+      "score_display": "string — e.g. '91%' (always shown as %)",
+      "confidence": "float 0-1"
+    },
+
+    "copy": {
+      "eyebrow": "string — small label above persona name, e.g. 'This week you're'",
+      "persona_label": "string — primary identity name, e.g. 'Arpit Bala Core'",
+      "aka": "string | null — cultural alias if different from archetype label",
+      "subtitle": "string — 1-2 line descriptor, e.g. 'Makes everyone laugh. Posts memes. Sends reels.'",
+      "body": "string — 2-3 line copy that lands the emotional truth beneath the persona",
+      "card_copy": "string — the closing punch line or signature line of this card",
+      "tone": "enum: funny | tender | roast | reflective | hype"
+    },
+
+    "visual": {
+      "color_token": "string — persona's assigned colour from palette e.g. 'coral' | 'purple' | 'teal'",
+      "background_style": "enum: solid | gradient_subtle | texture_noise",
+      "icon_glyph": "string — single emoji or icon name representing this persona",
+      "illustration_key": "string | null — key for persona illustration asset if exists"
+    },
+
+    "symptoms": {
+      "enabled": "boolean — whether to show symptom list",
+      "label": "string — e.g. 'Symptoms include'",
+      "items": [
+        "string — short symptom line e.g. 'Replaying old conversations'",
+        "string",
+        "string"
+      ]
+    },
+
+    "secondary_persona": {
+      "enabled": "boolean — show if user scored high on 2 personas",
+      "persona_id": "string | null",
+      "persona_label": "string | null",
+      "score_display": "string | null",
+      "relationship_copy": "string | null — e.g. 'with hints of'"
+    },
+
+    "streak": {
+      "enabled": "boolean — true if user has been this persona ≥2 consecutive periods",
+      "weeks": "integer — number of consecutive weeks",
+      "streak_copy": "string | null — e.g. '3rd week running'"
+    },
+
+    "metadata": {
+      "based_on_plays": "integer — total play events that fed this card",
+      "period_label": "string — human readable e.g. 'June 16 – June 22'"
+    }
+  }
+}

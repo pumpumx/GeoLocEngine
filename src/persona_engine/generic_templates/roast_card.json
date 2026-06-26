@@ -1,0 +1,30 @@
+{
+  "template_id": "roast_card",
+
+  "data": {
+
+    "roast": {
+      "copy": "string — the main roast line e.g. 'You replayed the same 3 songs 22 times. They're not going to text back.'",
+      "subtext": "string | null — optional follow-up line",
+      "tone": "enum: deadpan | absurdist | empathetic_roast | supportive_shade",
+      "intensity": "enum: mild | medium | spicy — never crosses into mean"
+    },
+
+    "trigger": {
+      "signal_type": "string — what behaviour triggered this roast e.g. 'repeat_rate' | 'late_night_ratio' | 'genre_lock'",
+      "signal_value": "string — the actual value that was roast-worthy e.g. '22 replays'",
+      "threshold_that_triggered": "string — what threshold was crossed"
+    },
+
+    "share": {
+      "share_copy": "string — slightly different from roast copy, optimised for sharing",
+      "share_hashtags": ["string"]
+    },
+
+    "visual": {
+      "background_style": "enum: dark | colored | minimal_white",
+      "color_token": "string",
+      "icon": "string | null"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "template_id": "time_heatmap",
+
+  "data": {
+
+    "peak_hours": {
+      "primary_hour": "integer 0-23 — hour with most plays",
+      "primary_label": "string — e.g. '1am'",
+      "secondary_hour": "integer 0-23 | null",
+      "secondary_label": "string | null",
+      "peak_session_type": "enum: late_night | early_morning | commute | work_hours | evening | scattered"
+    },
+
+    "distribution": {
+      "hourly_counts": "array of 24 integers — play count per hour (index = hour)",
+      "late_night_ratio": "float 0-1 — plays between 11pm-4am / total",
+      "morning_ratio": "float 0-1 — plays between 6am-10am / total",
+      "commute_ratio": "float 0-1 — plays between 8-10am and 5-7pm / total",
+      "weekend_vs_weekday_ratio": "float — weekend plays / weekday plays"
+    },
+
+    "copy": {
+      "headline": "string — e.g. 'You listen like someone who can't sleep.'",
+      "time_label": "string — e.g. 'Most active at 1am'",
+      "body": "string — 1-2 lines about what this temporal pattern suggests",
+      "tone": "enum: funny | tender | roast | observational"
+    },
+
+    "visual": {
+      "show_full_heatmap": "boolean — show all 24 bars or just highlight",
+      "highlight_hours": "array of integers — which hours to accent",
+      "accent_color_token": "string"
+    }
+  }
+}

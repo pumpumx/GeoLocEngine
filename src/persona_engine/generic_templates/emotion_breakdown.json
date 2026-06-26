@@ -1,0 +1,50 @@
+{
+  "template_id": "emotion_breakdown",
+
+  "data": {
+
+    "emotions": {
+      "dominant": {
+        "emotion_id": "string — e.g. 'romance'",
+        "label": "string — display name e.g. 'Romance'",
+        "score": "float 0-100",
+        "score_display": "string — e.g. '74%'"
+      },
+      "secondary": {
+        "emotion_id": "string",
+        "label": "string",
+        "score": "float 0-100",
+        "score_display": "string"
+      },
+      "tertiary": {
+        "emotion_id": "string | null",
+        "label": "string | null",
+        "score": "float 0-100 | null",
+        "score_display": "string | null"
+      },
+      "suppressed": {
+        "emotion_id": "string | null — emotion that was low but significant",
+        "label": "string | null",
+        "copy": "string | null — e.g. 'You kept the sadness quiet this week'"
+      }
+    },
+
+    "emotional_arc": {
+      "arc_type": "enum: stable | rising | falling | volatile | masked",
+      "arc_copy": "string — 1 line describing the emotional shape of the week e.g. 'Started heavy. Got louder. Stayed complicated.'"
+    },
+
+    "copy": {
+      "headline": "string — e.g. 'You listened to heartbreak like it was a sport.'",
+      "body": "string — 2-3 lines unpacking what the emotional profile means in human terms",
+      "closing": "string | null"
+    },
+
+    "visual": {
+      "chart_type": "enum: bar_proportional | word_weight | minimal_text",
+      "color_map": {
+        "emotion_id": "color_token — maps each emotion to a colour"
+      }
+    }
+  }
+}
