@@ -270,21 +270,13 @@ export const ListeningContextSchema = new Schema<ListeningContext>(
 export const AudioCharacterSchema = new Schema<AudioCharacter>(
   {
     energy_score: ScoreConfidenceSchema,
-
     danceability_score: ScoreConfidenceSchema,
-
     intensity_score: ScoreConfidenceSchema,
-
     complexity_score: ScoreConfidenceSchema,
-
     accessibility_score: ScoreConfidenceSchema,
-
     rawness_score: ScoreConfidenceSchema,
-
     melodic_strength: ScoreConfidenceSchema,
-
     rhythmic_dominance: ScoreConfidenceSchema,
-
     sonic_character: String
   },
   { _id: false }
@@ -404,7 +396,7 @@ export const ConfidenceSchema = new Schema(
 
 const SongProfileSchema = new Schema(
   {
-    profile_id: {
+    profile_id: { //System generated
       type: String,
       required: true,
       unique: true
@@ -414,7 +406,7 @@ const SongProfileSchema = new Schema(
       required: true
     },
     song_id: {
-      type: String,
+      type: Schema.Types.ObjectId,
       required: true,
       unique: true,
       index: true

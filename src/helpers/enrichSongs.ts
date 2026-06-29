@@ -117,8 +117,7 @@ export function deriveEmotionMetrics(
       ? 1
       : 1 - entropy / Math.log2(entries.length);
   //---------------------------------------
-  // Average Confidence
-  //---------------------------------------
+ //---------------------------------------
   const averageConfidence =
     vector.reduce(
       (sum, e) => sum + e.confidence,

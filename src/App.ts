@@ -27,7 +27,6 @@ class App {
 
   public listen() {
     this.app.listen(this.port, () => {
-      console.info(`=================================`);
       console.info(`======= ENV: ${this.env} =======`);
       console.info(`🚀 App listening on the port ${this.port}`);
       console.info(`=================================`);

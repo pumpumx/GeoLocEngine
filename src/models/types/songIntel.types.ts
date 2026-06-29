@@ -130,3 +130,4 @@ export interface SentimentScoresType {
     spiritual: number,
     heartbreak: number
 }
+

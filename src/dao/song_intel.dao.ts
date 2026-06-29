@@ -3,6 +3,7 @@ import { listen_event_metadata } from "../controllers/typings/userEmotionProfile
 import { SongEventLedger } from "../models/userEmotionProfile.model"
 import { getEmotionVectorBySongIdResponse } from "./types"
 import { EmotionDerivedMetrics } from "../helpers/types"
+import { ObjectId, Types } from "mongoose"
 
 export const getEmotionVectorBySongId = async (song_id:string)=>{
     const song_intel_details = await SongIntel.findOne({song_id : song_id}).lean()
@@ -14,16 +15,23 @@ export const getEmotionVectorBySongId = async (song_id:string)=>{
 }
 
 //Create 
-export const saveEnrichedMusicEventToLedger = async(userId:string, EventMetaData:listen_event_metadata,emotionalProfile:getEmotionVectorBySongIdResponse,emotionMetrices:EmotionDerivedMetrics)=>{
+export type saveEnrichedMusicEventToLedgerPayload = {
+    userId:string,
+    songId:string,
+    EventMetaData:listen_event_metadata,
+    emotionalProfile:getEmotionVectorBySongIdResponse,
+    emotionMetrices:EmotionDerivedMetrics
+}
+export const saveEnrichedMusicEventToLedger = async(payload:saveEnrichedMusicEventToLedgerPayload)=>{
     return await SongEventLedger.create({
-        userId,
-        songId:EventMetaData.song_id,
-        playedAt:EventMetaData.played_at,
-        durationMs:Number(EventMetaData.duration_ms),
-        emotional_profile:emotionalProfile,
-        emotion_metrices:emotionMetrices,
-        completed:Number(EventMetaData.duration_ms) > 30 ? true : false,
-        source:EventMetaData.source || "organic",
+        userId:payload.userId,
+        songId:payload.songId, //This is the ref to the internal DB id
+        playedAt:payload.EventMetaData.played_at,
+        durationMs:Number(payload.EventMetaData.duration_ms),
+        emotional_profile:payload.emotionalProfile,
+        emotion_metrices:payload.emotionMetrices,
+        completed:Number(payload.EventMetaData.duration_ms) > 30 ? true : false,
+        source:payload.EventMetaData.source || "organic",
     })
 }
 

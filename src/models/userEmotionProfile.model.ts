@@ -98,7 +98,7 @@ const RecipeScoreSchema = new Schema<RecipeScore>(
 
 export interface ListeningEvent {
   userId: Types.ObjectId;
-  songId: string;
+  songId: Types.ObjectId;
   playedAt: Date;
   durationMs: number;
   completed: boolean;
@@ -169,7 +169,12 @@ const SongEventLedgerSchema = new Schema<ListeningEvent>(
       required: true,
       index: true,
     },
-    songId: { type: String, required: true, index: true },
+    songId: {
+      type: Schema.Types.ObjectId,
+      ref:"SongEvent",
+      required:true,
+      index:true
+    },
     playedAt: { type: Date, required: true, index: true },
     durationMs: { type: Number, default: 0 },
     completed: { type: Boolean, default: false },
