@@ -4,7 +4,9 @@ dist/
 
 .env
 
-config.development.json
+
+src/config/config.development.json
+
 
 # Logs
 logs/
