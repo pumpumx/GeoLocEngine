@@ -1,4 +1,4 @@
-import mongoose, { Schema } from "mongoose";
+import mongoose, { Schema , InferSchemaType } from "mongoose";
 import { AudioCharacter, CulturalAxis, CulturalIdentity, EmotionalProfile, EmotionScore, ListeningContext, LyricalPersonality, MusicDNA, ScoreConfidence, SentimentScoresType } from "./types/songIntel.types";
 
 export const ScoreConfidenceSchema = new Schema<ScoreConfidence>(
@@ -406,7 +406,7 @@ const SongProfileSchema = new Schema(
       required: true
     },
     song_id: {
-      type: Schema.Types.ObjectId,
+      type: String,
       required: true,
       unique: true,
       index: true
@@ -433,4 +433,5 @@ const SongProfileSchema = new Schema(
 );
 
 
-export const SongIntel = mongoose.model("SongIntel" , SongProfileSchema , "song_intel")
+export type SongIntelType = mongoose.InferSchemaType<typeof SongProfileSchema>
+export const SongIntel = mongoose.model("getEmotionVectorBySongIdSongIntel" , SongProfileSchema , "song_intel")

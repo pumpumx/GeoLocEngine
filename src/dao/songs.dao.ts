@@ -10,7 +10,7 @@ class SONGS_DAO {
       artist: song_details.artist,
       title: song_details.title,
       genre: song_details.primary_genre,
-      duration: Number(song_details.duration),
+      duration: song_details.duration,
       external_ids: song_details.external_ids,
       lyrics_detail: song_details.lyrics_details,
       imageUrl: song_details.image_url,

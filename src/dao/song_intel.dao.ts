@@ -1,35 +1,32 @@
 import { SongIntel } from "../models/songIntel.model"
-import { listen_event_metadata } from "../controllers/typings/userEmotionProfile.typings"
 import { SongEventLedger } from "../models/userEmotionProfile.model"
-import { getEmotionVectorBySongIdResponse } from "./types"
-import { EmotionDerivedMetrics } from "../helpers/types"
-import { ObjectId, Types } from "mongoose"
+import { saveEnrichedMusicEventToLedgerPayload, saveNormalMusicEventToLedgerPayload } from "./types/types"
 
 export const getEmotionVectorBySongId = async (song_id:string)=>{
-    const song_intel_details = await SongIntel.findOne({song_id : song_id}).lean()
-
-    if(!song_intel_details){ //TODO: If not found -> Make the AI CALL TO save the intel(SOng intel fetch)
-        throw new Error("Song Intel Not Found")
-    }
-    return song_intel_details;
+    const songIntelDetails = await SongIntel.findOne({song_id : song_id}).lean()
+    return songIntelDetails;
 }
 
-//Create 
-export type saveEnrichedMusicEventToLedgerPayload = {
-    userId:string,
-    songId:string,
-    EventMetaData:listen_event_metadata,
-    emotionalProfile:getEmotionVectorBySongIdResponse,
-    emotionMetrices:EmotionDerivedMetrics
-}
+
 export const saveEnrichedMusicEventToLedger = async(payload:saveEnrichedMusicEventToLedgerPayload)=>{
     return await SongEventLedger.create({
         userId:payload.userId,
         songId:payload.songId, //This is the ref to the internal DB id
         playedAt:payload.EventMetaData.played_at,
         durationMs:Number(payload.EventMetaData.duration_ms),
-        emotional_profile:payload.emotionalProfile,
         emotion_metrices:payload.emotionMetrices,
+        emotional_profile:payload.emotionalProfile,
+        completed:Number(payload.EventMetaData.duration_ms) > 30 ? true : false,
+        source:payload.EventMetaData.source || "organic",
+    })
+}
+
+export const saveNormalMusicEventToLedger = async(payload:saveNormalMusicEventToLedgerPayload)=>{
+    return await SongEventLedger.create({
+        userId:payload.userId,
+        songId:payload.songId, //This is the ref to the internal DB id
+        playedAt:payload.EventMetaData.played_at,
+        durationMs:Number(payload.EventMetaData.duration_ms),
         completed:Number(payload.EventMetaData.duration_ms) > 30 ? true : false,
         source:payload.EventMetaData.source || "organic",
     })

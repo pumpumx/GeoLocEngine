@@ -27,7 +27,7 @@ const songSchema = new Schema(
       required: true,
     },
     duration: {
-      type: Number,
+      type: String,
       required: true,
     },
     audio_details: {

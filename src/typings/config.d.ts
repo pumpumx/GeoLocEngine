@@ -10,3 +10,10 @@ export interface IMongoDb {
     database:string,
     mongo_uri:string
 }
+
+export interface IMusicFck {
+    BaseUrl:string
+}
+export interface IServices {
+    MusicFck:IMusicFck
+}

@@ -1,3 +1,6 @@
+import { MusicDNA } from "../../dao/types/types";
+import { FilteredEmotionVector } from "../../helpers/enrichSongs";
+
 export type songDetails = {
   title: string;
   artist: string;
@@ -24,7 +27,7 @@ export type songDetails = {
   image_url: string;
 };
 
-export type listen_event_metadata = {
+export type listenEventMetaData= {
   song_details: songDetails;
   played_at: string;
   duration_ms: string;
@@ -39,3 +42,4 @@ export type listen_event_metadata = {
     | "share"
     | "other";
 };
+

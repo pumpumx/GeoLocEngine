@@ -1,4 +1,4 @@
-import { MusicDNA } from "../../dao/types";
+import { MusicDNA } from "../../dao/types/types";
 import { EmotionScore } from "./songIntel.types";
 
 export const EMOTIONS = [

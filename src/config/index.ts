@@ -2,7 +2,7 @@
 
 import nconf from 'nconf';
 import path from 'path'
-import { IMongoDb, IServer } from '../typings/config.js';
+import { IMongoDb, IServer, IServices } from '../typings/config.js';
 
 
 const env = process.env.NODE_ENV || 'development'
@@ -16,6 +16,8 @@ export const PORT = (nconf.get('server') as IServer).port
 export const logDir = '../../logs'
 
 export const mongoURI = (nconf.get('mongodb') as IMongoDb).mongo_uri
+export const MusicFck = (nconf.get('services') as IServices ).MusicFck
+
 
 
 

@@ -2,6 +2,13 @@
     "mongodb":{
         "host":"localhost",
         "port":"27017",
-        "database":""
+        "database":"SociTune",
+        "mongo_uri":"mongodb+srv://aishwaryaaditya2_db_user:9doNtS2LDp2bYUMz@cluster0.kftztus.mongodb.net/SociTune?appName=Cluster0"
+    },
+    "server":{
+        "port":"3012"
+    },
+    "musicFck":{
+        "BaseUrl":"http://localhost:3034/api/v1/platform"
     }
 }

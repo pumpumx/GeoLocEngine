@@ -113,6 +113,7 @@ const SingleEmotionVectorSchema = new Schema(
   {
     emotion:String,
     score:Number,
+    confidence:Number
   },
   {
     _id:false
@@ -122,11 +123,9 @@ const SongEventLedgerEmotionSchema = new Schema(
   {
     emotion_vectors:{
       type: [SingleEmotionVectorSchema],
-      default:null
     },
     dominant_emotions:{
       type:[TopEmotionSchema],
-      default: null
     },
     music_dna:{
         mood: [String],
