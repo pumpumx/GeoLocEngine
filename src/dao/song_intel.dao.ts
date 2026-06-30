@@ -8,7 +8,7 @@ import { ObjectId, Types } from "mongoose"
 export const getEmotionVectorBySongId = async (song_id:string)=>{
     const song_intel_details = await SongIntel.findOne({song_id : song_id}).lean()
 
-    if(!song_intel_details){ //TODO: If not found -> Make the AI CALL TO save the intel
+    if(!song_intel_details){ //TODO: If not found -> Make the AI CALL TO save the intel(SOng intel fetch)
         throw new Error("Song Intel Not Found")
     }
     return song_intel_details;

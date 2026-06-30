@@ -17,7 +17,7 @@ import SONGS_DAO from "../dao/songs.dao";
 
 class UserEmotionProfileService {
   public SongEventDao = Singleton.instance<SONGS_DAO>(SONGS_DAO);
-  MusicRejectionThreshold: number = 30;
+  MusicRejectionThreshold: number = 30;//seconds
 
   saveListeningEvent = async (userId: string, listen_event_metadata: listen_event_metadata) => {
     const { song_details, completed, played_at, duration_ms, session_id } = listen_event_metadata;
@@ -37,13 +37,14 @@ class UserEmotionProfileService {
       .lean()
       .select("_id");
 
-      const internalSongId = songExists?._id.toString() ?? (await this.SongEventDao.saveNewSong(song_details))._id.toString()
+      //Internal song id -> mongodb !! Lyrics Fetch
+    const internalSongId =
+      songExists?._id.toString() ??
+      (await this.SongEventDao.saveNewSong(song_details))._id.toString();
 
     //fetch song details by song_id and embed the necessary factors determining emotional scores directly with listening events
     //intel includes -> emotional_vectors,primary_context,primary_mood,music_dna
-    const song_intel_details = await getEmotionVectorBySongId(
-      internalSongId
-    ); //This returns the song_intel of this particular song
+    const song_intel_details = await getEmotionVectorBySongId(internalSongId); //This returns the song_intel of this particular song
 
     //extract music DNA
     const musicDNA: MusicDNA = {
@@ -73,15 +74,12 @@ class UserEmotionProfileService {
     //save the event in the db -> Immutable Event Ledger
     const payload: saveEnrichedMusicEventToLedgerPayload = {
       userId: userId,
-      songId: internalSongId ,
-      emotionalProfile:songIntel,
-      EventMetaData:listen_event_metadata,
-      emotionMetrices:emotion_metrices
+      songId: internalSongId,
+      emotionalProfile: songIntel,
+      EventMetaData: listen_event_metadata,
+      emotionMetrices: emotion_metrices,
     };
-    const saveEvent = await saveEnrichedMusicEventToLedger(
-      payload,
-
-    );
+    const saveEvent = await saveEnrichedMusicEventToLedger(payload);
 
     if (!saveEvent) {
       throw new AppError("Failed To Save SongEvent", 500);

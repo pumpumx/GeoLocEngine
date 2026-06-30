@@ -1,7 +1,7 @@
 export type songDetails = {
   title: string;
   artist: string;
-  external_ids: {
+  external_ids: { //Important
     isrc_id?: string;
     spotify_id?: string;
     yt_id?: string;
@@ -23,6 +23,7 @@ export type songDetails = {
   };
   image_url: string;
 };
+
 export type listen_event_metadata = {
   song_details: songDetails;
   played_at: string;

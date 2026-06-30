@@ -67,5 +67,4 @@ const songSchema = new Schema(
 );
 
 export type songSchemaType = mongoose.InferSchemaType<typeof songSchema>
-
 export const SongEvent = mongoose.model("SongEvent", songSchema , "SongEvent");
